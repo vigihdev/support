@@ -23,6 +23,7 @@ final class Text
      */
     public static function toKebabCase(string $text): string
     {
+
         return (new UnicodeString($text))
             ->trim()
             ->replaceMatches('/[\s]+/', ' ')
