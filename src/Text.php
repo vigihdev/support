@@ -27,6 +27,7 @@ final class Text
             ->trim()
             ->replaceMatches('/[\s]+/', ' ')
             ->replaceMatches('/[_]+/', '-')
+            ->replaceMatches('/[\s]+/', '-')
             ->lower()
             ->toString();
     }

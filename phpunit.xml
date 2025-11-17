@@ -5,7 +5,7 @@
          testdox="true">
 
     <testsuites>
-        <testsuite name="Vigihdev Encryption Unit Test Suite">
+        <testsuite name="Vigihdev Support Unit Test Suite">
             <directory>tests</directory>
         </testsuite>
     </testsuites>
