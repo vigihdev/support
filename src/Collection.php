@@ -67,8 +67,8 @@ final class Collection implements IteratorAggregate, JsonSerializable, Stringabl
     /**
      * Filter koleksi dengan closure.
      *
-     * @param \Closure(mixed $value, mixed $key): bool $callback Fungsi callback untuk memfilter item.
-     * @return self Instance Collection baru dengan item yang sudah difilter.
+     * @param \Closure(T $value, int $key):bool $callback Fungsi callback untuk memfilter item.
+     * @return self<T> Instance Collection baru dengan item yang sudah difilter.
      */
     public function filter(Closure $callback): self
     {
@@ -88,11 +88,10 @@ final class Collection implements IteratorAggregate, JsonSerializable, Stringabl
         $mapped = array_map($callback, $this->data, array_keys($this->data));
         return new self($mapped);
     }
-
     /**
      * Reduce koleksi dengan closure.
-     *
-     * @param \Closure(mixed $carry, mixed $item): mixed $callback Fungsi callback untuk mereduksi item.
+     * @template U
+     * @param \Closure(T, int):U $callback Fungsi callback untuk mereduksi item.
      * @param mixed $initial Nilai awal untuk carry.
      * @return mixed Hasil reduksi.
      */
@@ -124,7 +123,7 @@ final class Collection implements IteratorAggregate, JsonSerializable, Stringabl
     /**
      * Mendapatkan semua data koleksi sebagai array.
      *
-     * @return array Data koleksi.
+     * @return array<int, T> Data koleksi.
      */
     public function toArray(): array
     {
@@ -157,6 +156,7 @@ final class Collection implements IteratorAggregate, JsonSerializable, Stringabl
 
     /**
      * Add item to collection
+     * @param T $item
      */
     public function add(mixed $item): self
     {

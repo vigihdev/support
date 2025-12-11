@@ -41,10 +41,10 @@ final class TextTest extends TestCase
         return [
             'empty string' => ['', ''],
             'single word' => ['hello', 'hello'],
-            'with spaces' => ['hello world', 'hello world'],
+            'with spaces' => ['hello world', 'hello-world'],
             'with underscore' => ['hello_world', 'hello-world'],
             'with multiple underscores' => ['hello__world', 'hello-world'],
-            'with leading spaces' => ['  hello world', 'hello world'],
+            'with leading spaces' => ['  hello world', 'hello-world'],
         ];
     }
 
