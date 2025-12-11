@@ -13,17 +13,21 @@ use Vigihdev\Support\Contracts\{ToArrayInterface, ToJsonInterface};
 
 /**
  * Collection
+ * 
+ * @template T
+ * @implements IteratorAggregate<int, T>
  *
  * Kelas ini menyediakan fungsionalitas untuk mengelola dan memanipulasi array data dengan cara yang lebih ekspresif dan berorientasi objek.
  */
 final class Collection implements IteratorAggregate, JsonSerializable, Stringable, ToJsonInterface, ToArrayInterface
 {
+    /** @var array<int, T> */
     protected array $data = [];
 
     /**
      * Membuat instance Collection baru.
-     *
-     * @param array $data Data awal untuk koleksi.
+     * 
+     * @param array<int, T> $data Data awal untuk koleksi
      */
     public function __construct(array $data = [])
     {
@@ -53,7 +57,7 @@ final class Collection implements IteratorAggregate, JsonSerializable, Stringabl
     /**
      * Mendapatkan iterator untuk koleksi.
      *
-     * @return \ArrayIterator Iterator untuk data koleksi.
+     * @return ArrayIterator<int, T> Iterator untuk data koleksi.
      */
     public function getIterator(): ArrayIterator
     {
@@ -74,9 +78,10 @@ final class Collection implements IteratorAggregate, JsonSerializable, Stringabl
 
     /**
      * Map koleksi dengan closure.
-     *
-     * @param \Closure(mixed $value, mixed $key): mixed $callback Fungsi callback untuk memetakan item.
-     * @return self Instance Collection baru dengan item yang sudah dipetakan.
+     * 
+     * @template U
+     * @param \Closure(T, int):U $callback Fungsi callback untuk memetakan item.
+     * @return self<U> Instance Collection baru dengan item yang sudah dipetakan.
      */
     public function map(Closure $callback): self
     {
@@ -99,7 +104,7 @@ final class Collection implements IteratorAggregate, JsonSerializable, Stringabl
     /**
      * Mendapatkan elemen pertama dari koleksi.
      *
-     * @return mixed Elemen pertama atau null jika koleksi kosong.
+     * @return T|null Elemen pertama atau null jika koleksi kosong.
      */
     public function first(): mixed
     {
@@ -109,7 +114,7 @@ final class Collection implements IteratorAggregate, JsonSerializable, Stringabl
     /**
      * Mendapatkan elemen terakhir dari koleksi.
      *
-     * @return mixed Elemen terakhir atau null jika koleksi kosong.
+     * @return T|null Elemen terakhir atau null jika koleksi kosong.
      */
     public function last(): mixed
     {
