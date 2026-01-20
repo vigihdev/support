@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "A robust set of utility and helper classes for PHP development, including string manipulation and array helpers.",
     "type": "library",
+    "homepage": "https://github.com/vigihdev/support",
     "keywords": [
         "php",
         "support",
