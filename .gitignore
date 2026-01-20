@@ -1,24 +1,10 @@
-# Composer
-/vendor/
-composer.lock
-
-# IDE
-.vscode/
-.idea/
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Test artifacts (keep tests/ folder but ignore cache)
-.phpunit.result.cache
-/coverage/
-
-# Development files
-/server.php
-/note.md
-GEMINI.md
-/scripts/
-
-# Amazon Q
 .amazonq/
+.vscode/
+.DS_Store
+/server.php
+local-dev/
+GEMINI.md
+scripts/
+vendor/
+composer.lock
+.phpunit.result.*

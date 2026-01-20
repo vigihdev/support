@@ -23,7 +23,8 @@
     ],
     "require": {
         "php": "^8.1",
-        "symfony/string": "^6.4"
+        "symfony/string": "^6.4",
+        "symfony/filesystem": "^6.4"
     },
     "autoload": {
         "psr-4": {
@@ -38,8 +39,11 @@
     "require-dev": {
         "phpunit/phpunit": "10.5.x-dev"
     },
+    "config": {
+        "process-timeout": 0
+    },
     "scripts": {
         "test": "phpunit",
-        "server": "php -S localhost:1934 server.php"
+        "dev": "php -S localhost:1934 local-dev/index.php"
     }
 }
