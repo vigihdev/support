@@ -1,8 +1,8 @@
 # VigihDev Support Library
 
-[![Tests](https://img.shields.io/badge/tests-97%20passed-brightgreen)](https://github.com/vigihdev/support)
-[![PHP Version](https://img.shields.io/badge/php-%5E8.1-blue)](https://php.net)
+![Tests](https://github.com/vigihdev/support/actions/workflows/tests.yml/badge.svg?branch=main)
 ![Push](https://github.com/vigihdev/support/actions/workflows/push.yml/badge.svg)
+[![PHP Version](https://img.shields.io/badge/php-%5E8.1-blue)](https://php.net)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
 A robust set of utility and helper classes for PHP development, including string manipulation, array helpers, file operations, and collections.
