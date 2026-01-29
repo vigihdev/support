@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Vigihdev\Support;
 
-final class Renderer
+final class UiHelper
 {
 
     /**
