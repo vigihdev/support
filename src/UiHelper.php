@@ -23,6 +23,15 @@ final class UiHelper
     ) {}
 
     /**
+     *
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
      * Generate onclick event for URL
      * 
      * @param string $url
