@@ -31,6 +31,19 @@ final class UiHelper
         return $this->name;
     }
 
+    public function prefixData(string $value): string
+    {
+        $value = Text::toKebabCase($value);
+        return "data-{$value}";
+    }
+
+    public function trimAll(string $value): string
+    {
+        $value = trim($value);
+        $value = preg_replace('/[\s]+/', '', $value);
+        return $value;
+    }
+
     /**
      * Generate onclick event for URL
      * 
